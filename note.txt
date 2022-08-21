@@ -1,0 +1,8 @@
+Install ingress-nginx - Mandatory command to be run inside cluster - kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.0/deploy/static/provider/cloud/deploy.yaml
+
+For local development, when we don't have a domain. We specify some host in ingress.yaml file, that host can be mapped with local IP address in /etc/hosts file - 127.0.0.1 ticketing.com
+
+Install skaffold tool to automate this process - (When making changes to yaml files, we have to apply that to cluster, build the image again, push it on docker hub and restart deployment, this tool is to automate this) - brew install skaffold
+We can disable push to docker hub upon each file change as well - using a setting inside the config file.
+Start skaffold - skaffold dev
+
